@@ -18,6 +18,7 @@ namespace WordScramble
         /// </summary>
         private readonly GameResult[] gameStats;
 
+
         /// <summary>
         /// Initializes a new instance of the <see cref="Game"/> class.
         /// Sets up the word provider, evaluator, and initializes the 
@@ -104,6 +105,7 @@ namespace WordScramble
             stopwatch.Stop();
             double timeTaken = stopwatch.Elapsed.TotalSeconds;
 
+
             /// <summary>
             /// Checks if the player's guess is correct.
             /// </summary>
@@ -171,5 +173,6 @@ namespace WordScramble
                 "\n[bold green]Press Enter to Return to Menu...[/]");
             Console.ReadLine();
         }
+
     }
 }
