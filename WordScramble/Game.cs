@@ -81,12 +81,11 @@ namespace WordScramble
             /// <summary>
             /// The randomly chosen word for the current round.
             /// </summary>
-            string word = // ////////// => TO IMPLEMENT <= //////////// //
-
+            string word = wordProvider.GetRandomWord();
             /// <summary>
             /// The scrambled version of the word.
             /// </summary>
-            string scrambledWord = // ////////// => TO IMPLEMENT <= //////////// //
+            string scrambledWord = wordProvider.GetScrambledWord(word);
 
             AnsiConsole.Clear();
             AnsiConsole.MarkupLine("[bold green]Unscramble the word:[/]");
@@ -107,7 +106,7 @@ namespace WordScramble
             /// <summary>
             /// Checks if the player's guess is correct.
             /// </summary>
-            bool isCorrect = // ////////// => TO IMPLEMENT <= //////////// //
+            bool isCorrect = word == scrambledWord;
 
             if (isCorrect)
             {
@@ -118,7 +117,7 @@ namespace WordScramble
                 // Shift existing entries
                 for (int i = gameStats.Length - 1; i > 0; i--)
                 {
-                    // ////////// => TO IMPLEMENT <= //////////// //
+                    gameStats[i] = gameStats[i - 1];
                 }
 
                 // Add new result at the beginning
