@@ -24,7 +24,9 @@ namespace WordScramble
         /// </summary>
         public Game()
         {
-            // ////////// => TO IMPLEMENT <= //////////// //
+            wordProvider = new WordProvider();
+            gameStats = new GameResult[5];
+
         }
 
         /// <summary>
@@ -51,10 +53,10 @@ namespace WordScramble
                 switch (choice)
                 {
                     case "Start Game":
-                        // ////////// => TO IMPLEMENT <= //////////// //
+                        StartGame();
                         break;
                     case "View Game Stats":
-                        // ////////// => TO IMPLEMENT <= //////////// //
+                        ShowGameStats();
                         break;
                     case "Quit":
                         return;
@@ -158,7 +160,7 @@ namespace WordScramble
                 {
                     // ////////// => TO IMPLEMENT <= //////////// //
                 }
-                
+
                 // Add row to table
                 // Table.AddRow() only accepts strings
                 // ////////// => TO IMPLEMENT <= //////////// //
