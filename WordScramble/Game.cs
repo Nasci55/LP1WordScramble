@@ -106,7 +106,7 @@ namespace WordScramble
             /// <summary>
             /// Checks if the player's guess is correct.
             /// </summary>
-            bool isCorrect = word == scrambledWord;
+            bool isCorrect = word == userInput;
 
             if (isCorrect)
             {
@@ -121,7 +121,7 @@ namespace WordScramble
                 }
 
                 // Add new result at the beginning
-                gameStats[0] = // ////////// => TO IMPLEMENT <= //////////// //
+                gameStats[0] = new GameResult(word, timeTaken);
             }
             else
             {
@@ -157,12 +157,12 @@ namespace WordScramble
             {
                 if (gameStats[i] == null)
                 {
-                    // ////////// => TO IMPLEMENT <= //////////// //
+                    continue;
                 }
 
                 // Add row to table
                 // Table.AddRow() only accepts strings
-                // ////////// => TO IMPLEMENT <= //////////// //
+                table.AddRow(Convert.ToString(i + 1), gameStats[i].Word, gameStats[i].TimeTaken.ToString("f2"));
             }
 
             AnsiConsole.Write(table);
