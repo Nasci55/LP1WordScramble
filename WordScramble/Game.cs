@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using Humanizer;
 using Spectre.Console;
 
 namespace WordScramble
@@ -106,7 +107,7 @@ namespace WordScramble
             /// <summary>
             /// Checks if the player's guess is correct.
             /// </summary>
-            bool isCorrect = word == userInput;
+            bool isCorrect = word == userInput.Transform(To.UpperCase);
 
             if (isCorrect)
             {
